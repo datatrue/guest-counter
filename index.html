@@ -29,7 +29,7 @@
 (()=>{
 'use strict';
 const KEY='guest-counter-v1';
-const example=[['Mom and Dad',2,0],['Pau 1.0',3,0],['Pau 2.0',2,3],['Ouatu 2.0',2,1],['Ouatu 3.0',2,0],['J & J',2,0]];
+const example=[['Mom and Dad',2,0],['Pau 1.0',3,0],['Pau 2.0',2,3],['Ouatu 2.0',2,1],['Ouatu 3.0',2,0],['J & J',2,0],['Guests',0,0]];
 function makeFamily(name,a,c){return {id:crypto.randomUUID(),name,baseAdults:a,baseChildren:c,adults:a,children:c,checked:true};}
 function load(){try{const parsed=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(parsed)&&parsed.every(f=>typeof f.id==='string'&&typeof f.name==='string'))return parsed;}catch{}return example.map(x=>makeFamily(...x));}
 let families=load(),screen='counter',editId=null;
